@@ -1,0 +1,58 @@
+string ageFunction (int age) {
+
+	string output;
+
+	if (age >= 16 && age <= 21) {
+		cout << "Do you want to go to the mall? Y/N " << endl;
+		cin >> output;
+		while (output.length() != 1 ) {
+			cout << "Please only type Y or N " << endl;
+			cin >> output;
+		}
+	}else if (age >= 22 && age <= 30	) {
+		cout << "Do you want to go on a trip to Hawaii? Y/N " << endl;
+		cin >> output;
+		while (output.length() != 1) {
+			cout << "Please only type Y or N " << endl;
+			cin >> output;
+		}
+	}
+	return output;
+	
+	}
+
+void enjoyedOrNot(string input) {
+
+	
+	 if ((input == "Y") || (input == "y")) {
+		cout << "Enjoy the trip!" << endl;
+	}else if ((input == "N") || (input == "n")) {
+		cout << "Aww cancelled" << endl;
+	}
+	else {
+		 cout << "wrong input" << endl;
+	}
+	
+}
+
+
+int main() {
+	
+	int userAge{};
+	string output{};
+	cout << "Hey how old are you?" << endl;
+	cin >> userAge;
+	while (cin.fail()|| userAge >30 || userAge <=15) {
+		cout << "Invalid input. Please enter another input." << endl;
+		cin.clear();
+		cin.ignore(1000, '\n');
+		cin >> userAge;
+
+	}
+
+	output = ageFunction(userAge);
+
+	enjoyedOrNot( output);
+	
+	
+}
